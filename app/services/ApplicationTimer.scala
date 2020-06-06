@@ -17,8 +17,6 @@ import scala.concurrent.Future
  * starts, so it is registered as an "eager singleton". See the code
  * in the [[Module]] class to see how this happens.
  *
- * This class needs to run code when the server stops. It uses the
- * application's [[ApplicationLifecycle]] to register a stop hook.
  */
 @Singleton
 class ApplicationTimer @Inject() (clock: Clock, appLifecycle: ApplicationLifecycle) {
@@ -30,7 +28,7 @@ class ApplicationTimer @Inject() (clock: Clock, appLifecycle: ApplicationLifecyc
   logger.info(s"ApplicationTimer demo: Starting application at $start.")
 
   // When the application starts, register a stop hook with the
-  // ApplicationLifecycle object. The code inside the stop hook will
+  // play.api.inject.ApplicationLifecycle object. The code inside the stop hook will
   // be run when the application stops.
   appLifecycle.addStopHook { () =>
     val stop: Instant = clock.instant
