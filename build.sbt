@@ -13,5 +13,6 @@ lazy val root = (project in file("."))
       "-feature",
       "-deprecation",
       "-Xfatal-warnings"
-    )
+    ),
+    envVars in Test := Map("PLAY_SECRET" -> "just a secret value for test")
   )
