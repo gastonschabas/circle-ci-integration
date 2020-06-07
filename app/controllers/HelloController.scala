@@ -15,4 +15,10 @@ class HelloController @Inject()(cc: ControllerComponents) extends AbstractContro
     }
   }
 
+  def hola = Action.async { request =>
+    Future {
+      Ok("hola!")
+    }
+  }
+
 }
