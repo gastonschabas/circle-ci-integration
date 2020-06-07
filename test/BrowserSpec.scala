@@ -19,4 +19,14 @@ class BrowserSpec extends PlaySpec
       pageSource must include ("Your new application is ready.")
     }
   }
+
+  "Another Application" should {
+
+    "Hi! message is returned" in {
+
+      go to ("http://localhost:" + port + "/message")
+
+      pageSource must include ("Hi!")
+    }
+  }
 }
