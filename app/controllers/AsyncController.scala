@@ -40,7 +40,9 @@ class AsyncController @Inject() (
     */
   def message =
     Action.async {
-      getFutureMessage(1.second).map { msg => Ok(msg) }
+      getFutureMessage(1.second).map { msg =>
+        Ok(msg)
+      }
     }
 
   private def getFutureMessage(delayTime: FiniteDuration): Future[String] = {
