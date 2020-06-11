@@ -7,18 +7,21 @@ import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
 
 @Singleton
-class HelloController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
+class HelloController @Inject() (cc: ControllerComponents)
+    extends AbstractController(cc) {
 
-  def greet = Action.async { request =>
-    Future {
-      Ok("hello!")
+  def greet =
+    Action.async { request =>
+      Future {
+        Ok("hello!")
+      }
     }
-  }
 
-  def hola = Action.async { request =>
-    Future {
-      Ok("hola!")
+  def hola =
+    Action.async { request =>
+      Future {
+        Ok("hola!")
+      }
     }
-  }
 
 }
