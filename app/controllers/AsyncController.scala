@@ -13,7 +13,7 @@ import scala.concurrent.{ExecutionContext, Future, Promise}
   * simple asynchronous code in a controller. It uses a timer to
   * asynchronously delay sending a response for 1 second.
   *
- * @param cc standard controller components
+  * @param cc standard controller components
   * @param actorSystem We need the `ActorSystem`'s `Scheduler` to
   * run code after a delay.
   * @param exec We need an `ExecutionContext` to execute our
@@ -34,7 +34,7 @@ class AsyncController @Inject() (
     * Creates an Action that returns a plain text message after a delay
     * of 1 second.
     *
-   * The configuration in the `routes` file means that this method
+    * The configuration in the `routes` file means that this method
     * will be called when the application receives a `GET` request with
     * a path of `/message`.
     */

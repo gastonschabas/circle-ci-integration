@@ -9,7 +9,8 @@ import play.api.mvc._
   * application's home page.
   */
 @Singleton
-class HomeController @Inject() (cc: ControllerComponents)(implicit
+class HomeController @Inject() (cc: ControllerComponents)(
+    implicit
     assetsFinder: AssetsFinder
 ) extends AbstractController(cc) {
 

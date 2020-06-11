@@ -12,12 +12,12 @@ import scala.concurrent.Future
   * application starts. When the application stops it prints out how
   * long the application was running for.
   *
- * This class is registered for Guice dependency injection in the
+  * This class is registered for Guice dependency injection in the
   * [[Module]] class. We want the class to start when the application
   * starts, so it is registered as an "eager singleton". See the code
   * in the [[Module]] class to see how this happens.
   *
- */
+  */
 @Singleton
 class ApplicationTimer @Inject() (
     clock: Clock,
